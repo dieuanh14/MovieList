@@ -5,6 +5,18 @@ body {
   height: 900px;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
 .mx-auto a {
   text-decoration: none;
 }
@@ -37,7 +49,8 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-.grid-1, grid-2 {
+.grid-1,
+grid-2 {
   text-align: center;
 }
 
@@ -90,9 +103,25 @@ input:focus {
   color: black;
 }
 
-.col {
+.movie-lists .movie {
+  margin-bottom: 2rem;
+}
+.movie-lists .movie .col {
+  margin-bottom: 2rem;
   height: 100%;
 }
-.col .flex-col {
+.movie-lists .movie .col .flex-col {
   height: 100%;
+}
+
+footer {
+  margin-top: 2rem;
+  color: black;
+}
+footer a {
+  text-decoration: none;
+  color: black;
+}
+footer a:hover {
+  color: blue;
 }/*# sourceMappingURL=App.css.map */
