@@ -1,35 +1,84 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Label, TextInput, Button, Textarea } from "flowbite-react";
-import styles from '../css/App.css';
+import styles from "../css/App.css";
 export default function ContactComponent() {
+  const initialValues = { name: "", email: "" };
+  const [formValue, setFormValue] = useState(initialValues);
+  const [formError, setFormError] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormValue({ ...formValue, [name]: value });
+    console.log(formValue);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setFormError(validate(formValue));
+    setIsSubmit(true);
+  };
+  useEffect( () => {
+    console.log(formError);
+    if (Object.keys(formError).length === 0 && isSubmit) {
+      console.log(formValue);
+    }
+  },
+    [formError]);
+  const validate = (value) => {
+    const errors = {};
+    const character=/[a-zA-Z]/;
+    const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i;
+    if (!value.name) {
+      errors.name = " *Name is required !!!";
+    }else if(!character.test(value.name)){
+      errors.name = " *Name must be character only !!!";
+    }
+    else if(!value.name.length < 2){
+      errors.name = " *Name must be more than 2 characters !!!";
+    }
+    if (!value.email) {
+      errors.email= "*Email is required !!!";
+    }else if(!regex.test(value.email)){
+      errors.email= "*Not a valid email !!!";
+
+    }
+    return errors;
+  };
   return (
     <div className="container">
       <h1>Get in touch</h1>
-      <form className="flex flex-col gap-4">
+      <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
         <div>
           <div className="mb-2 block">
             <Label htmlFor="name" value="Your Name" />
           </div>
           <TextInput
+            value={formValue.name}
+            name="name"
             id="name"
             type="text"
             placeholder="John"
-            required={true}
             shadow={true}
+            onChange={handleChange}
           />
         </div>
+        <p style={{color:"red"}}>{formError.name}</p>
         <div>
           <div className="mb-2 block">
-            <Label htmlFor="email2" value="Your email" />
+            <Label htmlFor="email" value="Your email" />
           </div>
           <TextInput
-            id="email2"
+            value={formValue.email}
+            name="email"
+            id="email"
             type="email"
             placeholder="name@gmail.com"
-            required={true}
             shadow={true}
+            onChange={handleChange}
           />
         </div>
+        <p style={{color:"red"}}> {formError.email} </p>
+
         <div id="textarea">
           <div className="mb-2 block">
             <Label htmlFor="comment" value="Your message" />
@@ -37,11 +86,10 @@ export default function ContactComponent() {
           <Textarea
             id="comment"
             placeholder="Leave a message..."
-            required={true}
             rows={4}
           />
         </div>
-        
+
         <Button type="submit">Submit</Button>
       </form>
     </div>
