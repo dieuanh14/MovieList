@@ -4,6 +4,7 @@ import { useState } from "react";
 import ReactPlayer from "react-player";
 
 export default function MyCard(props) {
+  const [favourites, setFavourites]=useState([]);
   const [showText, setShowText] = useState(false);
   const [showTrailer, setShowTrailer] = useState(false);
 
@@ -24,11 +25,20 @@ export default function MyCard(props) {
     )
     console.log(props.data.trailer)
   };
-
+  const handleChangeProductQuantity = (maPhim, value) => {
+    const movies = this.state.movies.map((item) => {
+      if (item.id === maPhim) {
+        return { ...item, quantity: item.quantity + value };
+      }
+      return item;
+    });
+    this.setState({ movies });
+  };
   return (
     <div className="movie" >
       <div className="max-w-sm col" >
-        <Card imgSrc={props.data.hinhAnh}>
+        <Card
+         imgSrc={props.data.hinhAnh} className="img-container">
           <div className="item">
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-black">
               {props.data.tenPhim}

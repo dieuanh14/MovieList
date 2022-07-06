@@ -1,19 +1,31 @@
-import React from "react";
+import React,{useState} from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeComponent from "./HomeComponent";
 import AboutComponent from "./AboutComponent";
 import ContactComponent from "./ContactComponent";
 import Nav from "./Nav";
 import FooterComponent from "./FooterComponent";
-import MovieDetail from './MovieDetail';
+import MovieDetail from "./MovieDetail";
 import SearchBar from "./SearchBar";
-import movieData from '../data.json';
+import movieData from "../data.json";
+import Text1 from "./Tex1";
+import ReactSwitch from "react-switch";
+import { createContext } from "react";
 
-export default function MainComponent() {
+export const ThemeContext = createContext(null);
 
+function MainComponent() {
+  const [theme,setTheme]=useState('light');
+  const toggleTheme=()=>{
+    setTheme((current)=>(current === 'light' ? 'dark' : 'light'));
+  } 
   return (
-    <div>
-      <Nav />
+    <ThemeContext.Provider value={{theme,toggleTheme}}>
+    <div id={theme}>
+  <div className="switch">
+      <Nav  />
+      <ReactSwitch onChange={toggleTheme} checked={theme === "dark"} className="switch-btn"/>
+      </div>
       {/* <MovieDetail/> */}
       {/* <SearchBar data={movieData}/> */}
       <Routes>
@@ -22,7 +34,9 @@ export default function MainComponent() {
         <Route path="/about" element={<AboutComponent />} />
         <Route path="/contact" element={<ContactComponent />} />
       </Routes>
-      <FooterComponent/>
+      <FooterComponent />
     </div>
+    </ThemeContext.Provider>
   );
 }
+export default MainComponent;

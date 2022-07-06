@@ -2,11 +2,11 @@ import React from "react";
 import { Navbar } from "flowbite-react";
 import { Link, NavLink } from "react-router-dom";
 import { NavItem } from "react-bootstrap";
-import styles from '../css/App.css';
+import styles from "../css/App.css";
+import ReactSwitch from "react-switch";
 export default function () {
   return (
-    <div className="container"
-   >
+    <div className="container">
       <Navbar fluid={true} rounded={true}>
         <Navbar.Brand href="">
           <img
@@ -18,7 +18,7 @@ export default function () {
             Movies
           </span>
         </Navbar.Brand>
-        <Navbar.Toggle />
+        <Navbar.Toggle  />
         <Navbar.Collapse>
           <NavItem>
             <NavLink to="/home">Home</NavLink>
@@ -29,6 +29,7 @@ export default function () {
           <NavItem>
             <NavLink to="/contact">Contact</NavLink>
           </NavItem>
+          <NavItem></NavItem>
         </Navbar.Collapse>
       </Navbar>
     </div>

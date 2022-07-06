@@ -1,7 +1,7 @@
 import React from "react";
 import { Carousel } from "flowbite-react";
-import styles from '../css/App.css'
-import st from '../assets/st.jpeg'
+import styles from "../css/App.css";
+import st from "../assets/st.jpeg";
 
 function MyCarousel() {
   return (
@@ -9,25 +9,23 @@ function MyCarousel() {
       className="
 	h-56 sm:h-64 xl:h-80 2xl:h-96 carousell container"
     >
-      <Carousel style={{height:'400px'}} className=" carousel">
-        <img className="img"
-          src={st}
-          alt="..."
-        />
-        <img className="img"
-          src="https://www.glenbrookcinema.com.au/imagesDB/movies/Spider-ManNoWayHomeSlideRated.jpg"
+      <Carousel style={{ height: "400px" }} className=" carousel">
+        <img className="img" src={st} alt="..." />
+        <img
+          className="img"
+          src="https://s3-eu-west-1.amazonaws.com/kneelbeforeblog/wp-content/uploads/2021/12/16012701/Spidey-banner-Cropped.jpg"
           alt="..."
         />
         <img
-          src="https://cdn.wallpapersafari.com/68/96/5r4S3j.jpg"
+          src="https://i.pinimg.com/originals/6d/c5/0b/6dc50b59e59c1403ac1155ea079eb308.jpg"
           alt="..."
         />
         <img
-          src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2022/01/minions-rise-of-gru.jpg?q=50&fit=contain&w=1500&h=750&dpr=1.5"
+          src="https://gameranx.com/wp-content/uploads/2022/06/maxresdefault-1.jpg"
           alt="..."
         />
         <img
-          src="http://images1.fanpop.com/images/image_uploads/Order-of-the-Phoenix-harry-potter-931094_1680_1050.jpg"
+          src="https://cutewallpaper.org/27/avengers-hd-dual-monitor-wallpaper/1093932457.jpg"
           alt="..."
         />
       </Carousel>

@@ -1,15 +1,44 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Gulzar&display=swap');
 
 body {
   height: 900px;
 }
 *{
-  margin: 0;
+	// background: #efefef;
+	// color: black; 
+  font-family: 'Gulzar', serif;
+   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+#light{
+  color: black;
+  background-color: white;
+}
+#dark{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  color: white;
+  background-color: black !important;
+  .switch{
+    nav{
+      background-color: black !important;
+      span, a{
+        color: white;
+      }
+    }
+    footer{
+      background-color: black !important;
+     
+    }
+  }
+  label{
+    color: white;
+  }
+}
+
 .container{
   max-width: 1280px;
   margin: 0 auto;
@@ -37,6 +66,7 @@ body {
 }
 .nav-item {
   a {
+    font-size: 18px;
     color: black;
   }
 }
@@ -111,14 +141,59 @@ input:focus {
 }
 }
 }
+
 footer {
   margin-top: 2rem;
-  color: black;
   a {
     text-decoration: none;
-    color: black;
     &:hover {
       color: blue;
+    }
+  }
+}
+.img-container{
+  position: relative;
+  transition: transform 0.2s;
+  &:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    .overlay{
+      opacity: 1;
+    }
+  }
+  .overlay{
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    transition: 0.5 ease;
+    opacity: 0;
+    bottom: 0;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+}
+.switch{
+  display: flex;
+  .switch-btn{
+    margin-top: 1.6rem;
+    margin-right: 3.2rem;
+  }
+ 
+} 
+@media screen and(max-width:576px){
+  .contain{
+    margin-top: -300px;
+    .movie-lists {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr ;
+      .movie{
+        height:100%;
+        width: 100%;
+        .col{
+        }
+      }
     }
   }
 }
