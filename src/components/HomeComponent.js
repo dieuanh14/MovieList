@@ -9,9 +9,14 @@ export default class HomeComponent extends Component {
   render() {
     return (
       <div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
         <MyCarousel />
         <Movies list={data} />
-    
+        </motion.div>
       </div>
     );
   }

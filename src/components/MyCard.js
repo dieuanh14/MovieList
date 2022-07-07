@@ -2,6 +2,7 @@ import React from "react";
 import { Card } from "flowbite-react";
 import { useState } from "react";
 import ReactPlayer from "react-player";
+import {motion} from 'framer-motion';
 
 export default function MyCard(props) {
   const [favourites, setFavourites]=useState([]);
@@ -36,6 +37,8 @@ export default function MyCard(props) {
   };
   return (
     <div className="movie" >
+        <motion.div animate={{y: 4,scale:1}} initial={{scale:0 }}>
+
       <div className="max-w-sm col" >
         <Card
          imgSrc={props.data.hinhAnh} className="img-container">
@@ -59,6 +62,7 @@ export default function MyCard(props) {
           </div>
         </Card>
       </div>
+      </motion.div>
     </div>
   );
 }

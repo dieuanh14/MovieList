@@ -1,9 +1,12 @@
 import React from "react";
 import st from "../assets/st.jpeg";
 import { Timeline, Button } from "flowbite-react";
+import { motion } from "framer-motion";
 export default function AboutComponent() {
   return (
     <div className="about">
+          <motion.div initial={{opacity:0}} animate={{opacity:1}} >
+
       <h1 style={{ textAlign: "center" }}>About Us</h1>
       <div className="container">
         <Timeline>
@@ -50,6 +53,7 @@ export default function AboutComponent() {
           </Timeline.Item>
         </Timeline>
       </div>
+      </motion.div>
     </div>
   );
 }

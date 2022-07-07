@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Label, TextInput, Button, Textarea } from "flowbite-react";
 import styles from "../css/App.css";
+import { motion } from "framer-motion";
 export default function ContactComponent() {
   const initialValues = { name: "", email: "" };
   const [formValue, setFormValue] = useState(initialValues);
@@ -46,6 +47,11 @@ export default function ContactComponent() {
   };
   return (
     <div className="container">
+     <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
       <h1>Get in touch</h1>
       <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
         <div>
@@ -92,6 +98,7 @@ export default function ContactComponent() {
 
         <Button type="submit">Submit</Button>
       </form>
+      </motion.div>
     </div>
   );
 }

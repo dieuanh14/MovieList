@@ -4,6 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 import { NavItem } from "react-bootstrap";
 import styles from "../css/App.css";
 import ReactSwitch from "react-switch";
+import { motion } from "framer-motion";
 export default function () {
   return (
     <div className="container">

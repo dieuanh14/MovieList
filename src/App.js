@@ -1,17 +1,17 @@
 import logo from "./logo.svg";
-import 'flowbite';
-import styles from './css/App.css';
+import "flowbite";
+import styles from "./css/App.css";
 import { Button } from "react-bootstrap";
 import { Row, Col } from "react-bootstrap";
 import { Navbar } from "flowbite-react";
 import Nav from "./components/Nav";
-import { useSpring, animated } from 'react-spring';
+import { useSpring, animated } from "react-spring";
 
-import MainComponent from "./components/MainComponent"
+import MainComponent from "./components/MainComponent";
 function App() {
   return (
     <div className="App">
-      <MainComponent/>
+        <MainComponent />
     </div>
   );
 }
