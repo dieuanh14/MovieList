@@ -52,7 +52,7 @@ export default function ContactComponent() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
-      <h1>Get in touch</h1>
+      <h1 style={{textAlign:'center'}}>Get in touch</h1>
       <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
         <div>
           <div className="mb-2 block">
