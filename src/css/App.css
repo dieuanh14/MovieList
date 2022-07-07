@@ -154,14 +154,20 @@ input:focus {
 }
 
 .movie-lists .movie {
+  height: 100%;
   margin-bottom: 2rem;
 }
 .movie-lists .movie .col {
-  margin-bottom: 2rem;
   height: 100%;
+  margin-bottom: 2rem;
 }
 .movie-lists .movie .col .flex-col {
   height: 100%;
+}
+.movie-lists .movie .btn_grp {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
 }
 
 footer {

@@ -37,7 +37,6 @@ export default function MyCard(props) {
   };
   return (
     <div className="movie" >
-        <motion.div animate={{y: 4,scale:1}} initial={{scale:0 }}>
 
       <div className="max-w-sm col" >
         <Card
@@ -49,7 +48,7 @@ export default function MyCard(props) {
             <p className="font-normal text-gray-700 dark:text-gray-400">
               {props.data.moTa}
             </p>
-            <div>
+            <div className="btn_grp">
               <button className="btn btn-success" onClick={onClick}>
                 View More
               </button>
@@ -62,7 +61,6 @@ export default function MyCard(props) {
           </div>
         </Card>
       </div>
-      </motion.div>
     </div>
   );
 }
