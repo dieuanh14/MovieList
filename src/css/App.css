@@ -16,22 +16,26 @@ body {
 #light {
   color: black;
   background-color: white;
+  
+}
+#light .rating {
+  color: black;
 }
 
 #dark {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   color: white;
-  background-color: black !important;
+  background-color: #2C3639 !important;
 }
 #dark .switch nav {
-  background-color: black !important;
+  background-color: #2C3639 !important;
 }
 #dark .switch nav span,
 #dark .switch nav a {
   color: white;
 }
 #dark .switch footer {
-  background-color: black !important;
+  background-color: #2C3639 !important;
 }
 #dark label {
   color: white;
@@ -42,7 +46,9 @@ body {
 #dark footer li a {
   color: wheat;
 }
-
+#dark .rating p{
+  color: black;
+}
 .container {
   max-width: 1280px;
   margin: 0 auto;
@@ -69,7 +75,6 @@ body {
 .nav-item a {
   z-index: 0;
   font-size: 18px;
-  color: black;
   color: black;
   text-decoration: none;
   font-size: 14px;
@@ -165,8 +170,6 @@ input:focus {
   height: 100%;
 }
 .movie-lists .movie .btn_grp {
-  display: flex;
-  justify-content: center;
   gap: 4px;
 }
 
@@ -221,4 +224,6 @@ footer a {
     height: 100%;
     width: 100%;
   }
-}/*# sourceMappingURL=App.css.map */
+}
+
+/*# sourceMappingURL=App.css.map */

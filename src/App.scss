@@ -17,21 +17,27 @@ body {
 #light {
   color: black;
   background-color: white;
+  
 }
 #dark {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   color: white;
-  background-color: black !important;
+  background-color: #2C3639 !important;
+  .rating{
+    p{
+      color: black;
+    }
+  }
   .switch {
     nav {
-      background-color: black !important;
+      background-color: #2C3639 !important;
       span,
       a {
         color: white;
       }
     }
     footer {
-      background-color: black !important;
+      background-color: #2C3639 !important;
     }
   }
   label {
@@ -172,8 +178,7 @@ input:focus {
       }
       }
       .btn_grp{
-        display: flex;
-        justify-content:center;
+     
         gap: 4px;
       }
   }

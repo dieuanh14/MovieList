@@ -12,7 +12,7 @@ export default function MyCard(props) {
   const onClick = () => setShowText(true);
   const onTrailer = () => setShowTrailer(true);
   const Text = () => (
-    <div>
+    <div className="rating">
       <p>Rating: {props.data.danhGia}</p>
       <p>Pulic Date: {props.data.ngayKhoiChieu}</p>
     </div>
