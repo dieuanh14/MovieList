@@ -16,7 +16,6 @@ export default function FooterComponent() {
   return (
     <div className="container">
         <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-
       <footer class="p-4 sm:p-6 dark:bg-gray-800">
         <div class="md:flex md:justify-between w-full text-center">
           <div class="mb-6 md:mb-0">

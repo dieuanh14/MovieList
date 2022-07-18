@@ -11,6 +11,9 @@ import Text1 from "./Tex1";
 import ReactSwitch from "react-switch";
 import { createContext } from "react";
 import { motion } from "framer-motion";
+import Movies from "./Movies";
+import data from "../data.json";
+import MyCarousel from "./MyCarousel";
 
 export const ThemeContext = createContext(null);
 
@@ -31,8 +34,8 @@ function MainComponent() {
             className="switch-btn"
           />
         </div>
-        {/* <SearchBar data={movieData}/> */}
         <Routes>
+       
           <Route path="/" element={<HomeComponent />} />
           <Route path="/home" element={<HomeComponent />} />
           <Route path="/about" element={<AboutComponent />} />

@@ -34,9 +34,6 @@ export default function ContactComponent() {
     }else if(!character.test(value.name)){
       errors.name = " *Name must be character only !!!";
     }
-    // else(!value.name.length < 2){
-    //   errors.name = " *Name must be more than 2 characters !!!";
-    // }
     if (!value.email) {
       errors.email= "*Email is required !!!";
     }else if(!regex.test(value.email)){

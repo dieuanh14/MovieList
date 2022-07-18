@@ -5,7 +5,6 @@ import ReactPlayer from "react-player";
 import {motion} from 'framer-motion';
 
 export default function MyCard(props) {
-  const [favourites, setFavourites]=useState([]);
   const [showText, setShowText] = useState(false);
   const [showTrailer, setShowTrailer] = useState(false);
 
@@ -21,24 +20,22 @@ export default function MyCard(props) {
     return(
     <div style={{marginTop:'8px'}}>
       { <ReactPlayer controls url={props.data.trailer} width='340px' height='170px' /> }
-      
     </div>
     )
     console.log(props.data.trailer)
   };
-  const handleChangeProductQuantity = (maPhim, value) => {
-    const movies = this.state.movies.map((item) => {
-      if (item.id === maPhim) {
-        return { ...item, quantity: item.quantity + value };
-      }
-      return item;
-    });
-    this.setState({ movies });
-  };
+  // const handleChangeMovie = (maPhim, value) => {
+  //   const movies = this.state.movies.map((item) => {
+  //     if (item.id === maPhim) {
+  //       return { ...item, quantity: item.quantity + value };
+  //     }
+  //     return item;
+  //   });
+  //   this.setState({ movies });
+  // };
   return (
     <div className="movie" >
-
-      <div className="max-w-sm col" >
+      <div className="max-w col" >
         <Card
          imgSrc={props.data.hinhAnh} className="img-container">
           <div className="item">

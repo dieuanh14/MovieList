@@ -1,14 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
 @import url("https://fonts.googleapis.com/css2?family=Gulzar&display=swap");
 
 body {
   height: 900px;
 }
 * {
-  // background: #efefef;
-  // color: black;
   font-family: "Gulzar", serif;
   margin: 0;
   padding: 0;
@@ -89,10 +85,10 @@ body {
     color: black;
     &::after {
       content: "";
-      width: 0;
+      width: 0px;
       display: block;
       height: 2px;
-      background-color: red;
+      background-color:red;
       transition-duration: 0.5s;
       transition-timing-function: ease-in-out;
     }
@@ -230,7 +226,14 @@ footer {
       .movie {
         height: 100%;
         width: 100%;
-        .col {
+      }
+    }
+  }
+  .nav-item{
+    a{
+      &:hover {
+        &::after {
+          width: 35%;
         }
       }
     }
